@@ -1,0 +1,397 @@
+/* Import Google Font for Instagram logo */
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
+:root {
+  --background: #fafafa;
+  --foreground: #262626;
+  --input-bg: #ffffff;
+  --input-border: #dbdbdb;
+  --input-focus-border: #a8a8a8;
+  --button-bg: #0095f6;
+  --button-disabled: #b2dffc;
+  --button-text: #ffffff;
+  --divider: #dbdbdb;
+  --footer-bg: #ffffff;
+  --footer-text: #8e8e8e;
+  --link-blue: #00376b;
+  --facebook-blue: #385185;
+  --text-gray: #737373;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #000000;
+    --foreground: #ffffff;
+    --input-bg: #121212;
+    --input-border: #363636;
+    --input-focus-border: #a8a8a8;
+    --button-bg: #0095f6;
+    --button-disabled: #00376b;
+    --button-text: #ffffff;
+    --divider: #363636;
+    --footer-bg: #000000;
+    --footer-text: #8e8e8e;
+    --link-blue: #8e8e8e;
+    --facebook-blue: #8e8e8e;
+    --text-gray: #a8a8a8;
+  }
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  line-height: 18px;
+  margin: 0;
+  padding: 0;
+  /* Remove min-height and flex layout to allow scrolling */
+}
+
+.main-wrapper {
+  /* Remove flex: 1 and min-height to allow scrolling */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 32px 0;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 32px;
+  max-width: 935px;
+  width: 100%;
+  padding: 0 20px;
+  margin: 0 auto;
+}
+
+.left-section {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.left-section img {
+  max-width: 540px;
+  width: 100%;
+  border-radius: 12px;
+  margin: 40px 0;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.13);
+}
+
+.right-section {
+  flex: 1;
+  max-width: 350px;
+  width: 100%;
+}
+
+.login-box {
+  background: var(--background);
+  border: none;
+  border-radius: 1px;
+  box-shadow: 0 0 5px rgba(0,0,0,0.05);
+  padding: 40px 40px 24px 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.instagram-logo {
+  font-family: 'Pacifico', cursive;
+  font-style: italic;
+  font-size: 44px;
+  line-height: 52px;
+  margin: 22px 0;
+  color: var(--foreground);
+}
+
+.login-box form {
+  width: 100%;
+}
+
+.login-box input {
+  width: 100%;
+  background: var(--input-bg);
+  border: 1px solid var(--input-border);
+  border-radius: 3px;
+  color: var(--foreground);
+  font-size: 12px;
+  padding: 9px 8px 7px;
+  margin-bottom: 6px;
+  outline: none;
+  height: 36px;
+}
+
+.login-box input:focus {
+  border-color: var(--input-focus-border);
+}
+
+.login-btn {
+  width: 100%;
+  background: #b2dffc; /* Disabled color */
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  font-weight: 600;
+  font-size: 14px;
+  padding: 7px 16px;
+  margin: 8px 0;
+  cursor: default;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: none;
+  transition: background 0.2s, cursor 0.2s;
+}
+
+.login-btn:enabled {
+  background: #0095f6;
+  cursor: pointer;
+}
+
+.login-btn:enabled:hover {
+  background: #1877f2;
+}
+
+.login-btn:disabled {
+  background: var(--button-disabled);
+  cursor: default;
+}
+
+.divider {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  margin: 10px 0 18px;
+}
+
+.divider .line {
+  flex: 1;
+  height: 1px;
+  background: var(--divider);
+}
+
+.divider p {
+  margin: 0 18px;
+  color: var(--text-gray);
+  font-weight: 600;
+  font-size: 13px;
+  text-transform: uppercase;
+}
+
+.login-with-facebook {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.fb-img {
+  width: 16px;
+  height: 16px;
+  margin-right: 8px;
+}
+
+.facebook-login {
+  color: var(--facebook-blue);
+  font-weight: 600;
+  font-size: 14px;
+  text-decoration: none;
+}
+
+.forgot-password {
+  color: var(--link-blue);
+  font-size: 12px;
+  line-height: 16px;
+  margin-top: 12px;
+  text-align: center;
+  text-decoration: none;
+  display: block;
+}
+
+.signup-box {
+  background: var(--background);
+  border: 1px solid var(--input-border);
+  border: none;
+  border-radius: 1px;
+  padding: 20px 0;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.signup-box p {
+  color: var(--foreground);
+  font-size: 14px;
+  margin: 0;
+}
+
+.signup-box a {
+  color: var(--button-bg);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.download-section {
+  text-align: center;
+}
+
+.download-section p {
+  color: var(--foreground);
+  font-size: 14px;
+  margin: 10px 0;
+}
+
+.app-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.app-btn {
+  height: 40px;
+}
+
+.footer {
+  background: var(--footer-bg);
+  padding: 20px 0;
+  text-align: center;
+  margin-top: auto;
+}
+
+.footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 12px;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.footer-links a {
+  color: var(--footer-text);
+  font-size: 12px;
+  text-decoration: none;
+}
+
+.footer-bottom {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  color: var(--footer-text);
+  font-size: 12px;
+}
+
+.language-select {
+  background: transparent;
+  color: var(--footer-text);
+  border: none;
+  font-size: 12px;
+  outline: none;
+}
+
+/* Responsive styles */
+@media (max-width: 1200px) {
+  .left-section img {
+    max-width: 400px;
+  }
+}
+
+@media (max-width: 900px) {
+  .left-section img {
+    max-width: 320px;
+    margin-bottom: 24px;
+  }
+}
+
+@media (max-width: 450px) {
+  .login-box, .signup-box {
+    background: transparent;
+    border: none;
+    padding: 20px 0;
+  }
+  
+  .container {
+    padding: 0;
+  }
+  
+  .main-wrapper {
+    padding: 0;
+  }
+  
+  body {
+    background: var(--background);
+  }
+}
+
+/* Hide left image and make form full width on mobile */
+@media (max-width: 875px) {
+  .left-section {
+    display: none;
+  }
+  .container {
+    max-width: 350px;
+    padding: 0 10px;
+    gap: 0;
+  }
+  .right-section {
+    max-width: 100%;
+    width: 100%;
+    margin: 0 auto;
+  }
+  .login-box {
+    padding: 24px 0 16px 0;
+  }
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.password-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+.password-wrapper input[type="password"],
+.password-wrapper input[type="text"] {
+  width: 100%;
+  padding-right: 60px;
+}
+
+.toggle-password {
+  position: absolute;
+  right: 8px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  color: #e7eaed;
+  font-weight: 600;
+  font-size: 13px;
+  cursor: pointer;
+  padding: 0 8px;
+  height: 100%;
+  outline: none;
+  z-index: 2;
+}
+
+.toggle-password.hidden {
+  display: none;
+}
