@@ -1,59 +1,106 @@
 # 📧 Phishing Awareness Campaign – Mock Test Project
 
-This project is a **phishing awareness mock test campaign** designed to simulate a phishing attack in a controlled environment. It helps educate users on recognizing phishing attempts and avoiding credential theft.
+This project simulates a **phishing attack** to train users on how to identify and avoid phishing attempts. It uses a **fake Instagram login page** and a simple backend to log user input and deliver awareness messages.
 
 ---
 
 ## 📝 Project Overview
 
-- This project sends a **fake email** (stored in `email.txt`) to test users, which contains a **link to a fake Instagram login page**.
-- When the user clicks the link and attempts to log in, the system captures the attempt and then **redirects them to an awareness message** explaining the phishing risk.
-- It is intended purely for **educational and awareness training purposes**.
+- Sends a **mock phishing email** (stored in `email.txt`) to test users.
+- Redirects users to a **fake Instagram login page** (`index.html`) hosted locally.
+- Captures login attempts using PHP and logs them in `phish_log.txt`.
+- Then redirects the user to an **awareness message page** (`review.php`) explaining the phishing scenario.
 
 ---
 
-## 📁 Files Included
+## 📁 Project Structure
 
-| File / Folder       | Purpose                                              |
-|---------------------|------------------------------------------------------|
-| `email.txt`         | The mock phishing email template                    |
-| `index.html`        | Fake Instagram login page (entry point)            |
-| `capture.php`       | Captures user input (simulating credential theft)   |
-| `phish_log.txt`     | Logs login attempts for evaluation                  |
-| `review.php`        | Displays an awareness or warning message            |
-| `Images/`           | Contains all fake branding images                   |
-| `styles.css`        | Custom styling for fake login interface             |
+| File / Folder       | Purpose                                                   |
+|---------------------|-----------------------------------------------------------|
+| `email.txt`         | Sample phishing email text with fake login link           |
+| `index.html`        | Instagram-style fake login page (frontend)                |
+| `capture.php`       | Handles form input and logs it in `phish_log.txt`         |
+| `phish_log.txt`     | Log file storing captured credentials (for awareness)     |
+| `review.php`        | Awareness page shown after form submission                |
+| `Images/`           | Contains Instagram logo and background images             |
+| `styles.css`        | CSS file for styling the fake login page                  |
+
+---
+
+## ✅ How to Run Locally
+
+### 📌 Prerequisites
+- PHP installed (verify with `php -v`)
+- Cloudflared downloaded (`cloudflared.exe` for Windows)
+
+---
+
+### ▶ Step-by-Step Instructions
+
+#### 1. Start Local PHP Server
+Open PowerShell or CMD in your project directory and run:
+```bash
+php -S localhost:8000
+
+This will host your project locally on [http://localhost:8000](http://localhost:8000)
+
+---
+
+#### 2. Start Cloudflare Tunnel
+
+In the same directory, run:
+
+```bash
+.\cloudflared.exe tunnel --url http://localhost:8000
+```
+
+Cloudflare will generate a **temporary public link**, for example:
+
+```
+https://your-tunnel-id.trycloudflare.com
+```
+
+> ✅ Share this link with test users for mock phishing awareness.
+
+---
+
+#### 3. Send the Fake Email
+
+Use the content from `email.txt` to simulate a phishing email.
+Update the link to match your generated Cloudflare URL like:
+
+```
+https://your-tunnel-id.trycloudflare.com/index.html
+```
+
+---
+
+## 💾 Data Storage
+
+* Login attempts are **saved locally** in `phish_log.txt`.
+* No external database is used.
+* This project works **without XAMPP** — using only PHP’s built-in server.
 
 ---
 
 ## 🚨 Disclaimer
 
-This project is strictly for **cybersecurity training and internal awareness campaigns**.  
-**Do not deploy or use this on live systems or against individuals without consent.**
+> ⚠ This project is for **educational use only**.
+> Do not deploy or distribute it in real environments without proper consent.
+> It is intended for **cybersecurity awareness training** purposes only.
 
 ---
 
-## ✅ How It Works
+## 🎯 Objective
 
-1. A user receives a fake email (from `email.txt`).
-2. Clicking the link opens a fake Instagram login page (`index.html`).
-3. If they try to log in, their input is logged in `phish_log.txt`.
-4. The user is then redirected to an **awareness page** (`review.php`) explaining the purpose of the campaign.
-
----
-
-## 💡 Objective
-
-The goal of this mock campaign is to:
-- Simulate real-world phishing attacks.
-- Educate users on recognizing suspicious links and pages.
-- Encourage proactive cybersecurity habits.
+* Simulate a phishing attack scenario.
+* Teach users to detect suspicious links and fake pages.
+* Promote safer online habits through a practical demo.
 
 ---
 
 ## 👤 Author
 
-**RASI P**  
-For academic/project submission and awareness purpose only.
+**RASI P**
+For academic and awareness demonstration purposes.
 
----
