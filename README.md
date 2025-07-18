@@ -41,7 +41,7 @@ This project simulates a **phishing attack** to train users on how to identify a
 Open PowerShell or CMD in your project directory and run:
 ```bash
 php -S localhost:8000
-
+```
 This will host your project locally on [http://localhost:8000](http://localhost:8000)
 
 ---
